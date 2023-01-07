@@ -13,7 +13,7 @@ public class CreatePlaylistCommandHandler : IRequestHandler<CreatePlaylistComman
     
     public async Task<Playlist> Handle(CreatePlaylistCommand command, CancellationToken cancellationToken)
     {
-        var playlist = new Playlist(command.Name, command.Songs, command.User);
+        var playlist = new Playlist(command.Name, command.User, command.Songs);
 
         _context.Playlists.Add(playlist);
         await _context.SaveChangesAsync();
