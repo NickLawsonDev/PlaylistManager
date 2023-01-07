@@ -1,3 +1,8 @@
 namespace Core.Domain.Entities;
 
-public record Song(string Name, double Length, string Lyrics) : BaseEntity;
+public class Song : BaseEntity
+{
+    public string Name { get; set; } = string.Empty;
+    public double Length { get; set; }
+    public string Lyrics { get; set; } = string.Empty;
+}
