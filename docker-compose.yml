@@ -1,17 +1,17 @@
 version: "3.4"
 
 volumes:
-  cqrs-data:
+  playlist-manager-data:
 
 services:
   db:
     image: postgres:14.3
     environment:
-      POSTGRES_DB: CQRSMediatR
+      POSTGRES_DB: PlaylistManager
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
     volumes:
       - ./script:/app-scripts:ro
-      - cqrs-data:/var/lib/postgresql/data
+      - playlist-manager-data:/var/lib/postgresql/data
     ports:
-      - "15432:5432"
+      - "5432:5432"
